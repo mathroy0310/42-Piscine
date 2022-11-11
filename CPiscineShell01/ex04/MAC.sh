@@ -1,0 +1,1 @@
+fconfig -C MAC | tr " " "\n"
