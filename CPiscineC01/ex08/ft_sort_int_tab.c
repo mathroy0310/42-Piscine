@@ -1,33 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maroy <maroy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/20 10:56:49 by maroy             #+#    #+#             */
-/*   Updated: 2023/05/18 16:17:45 by maroy            ###   ########.fr       */
+/*   Created: 2023/05/18 16:48:10 by maroy             #+#    #+#             */
+/*   Updated: 2023/05/18 16:48:13 by maroy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-void	ft_putchar(char c)
+void	ft_swap(int *a, int *b)
 {
-	write(1, &c, 1);
+	int	temp;
+
+	temp = *a;
+	*a = *b;
+	*b = temp;
 }
 
-void	ft_putnbr(int nb)
+void	ft_sort_int_tab(int *tab, int size)
 {
-	unsigned int	nbr;
+	int	i;
+	int	j;
 
-	if (nb < 0)
+	i = 0;
+	while (i < size - 1)
 	{
-		nbr = -nb;
-		write(1, "-", 1);
+		j = i + 1;
+		while (j < size)
+		{
+			if (tab[i] > tab[j])
+				ft_swap(&tab[i], &tab[j]);
+			j++;
+		}
+		i++;
 	}
-	else
-		nbr = nb;
-	if (nb / 10 != 0)
-		ft_putnbr(nbr / 10);
-	ft_putchar(nbr % 10 + '0');
 }
