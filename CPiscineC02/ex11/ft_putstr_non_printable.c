@@ -6,7 +6,7 @@
 /*   By: maroy <maroy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 17:03:15 by maroy             #+#    #+#             */
-/*   Updated: 2023/05/18 17:04:27 by maroy            ###   ########.fr       */
+/*   Updated: 2023/05/18 22:48:43 by maroy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,18 @@ void	ft_puthex(char n)
 	else
 		ft_putchar(n + 48);
 }
+
+// void	ft_puthex(char n)
+// {
+// 	char			*base;
+// 	unsigned char	c;
+
+// 	c = (unsigned char)n;
+// 	base = "0123456789abcdef";
+// 	ft_putchar('\\');
+// 	ft_putchar(base[c / 16]);
+// 	ft_putchar(base[c % 16]);
+// }
 
 void	ft_putstr_non_printable(char *str)
 {
